@@ -1,0 +1,5 @@
+GITHUB Actions
+---
+We can use github with cypress directly to  test any files we commit
+i remove the record key before github deployment
+    "test": "cypress run --headless", 
