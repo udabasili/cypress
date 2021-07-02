@@ -15,7 +15,7 @@ describe("Make sure site loads", () => {
        fixture: "config",
      })
         cy.visit("http://localhost:3000/")
-        cy.login()
+        // cy.login()
   })
 
   it("Page Loads", () => {
