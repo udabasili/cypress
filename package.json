@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cypress run --headless", 
+    "test": "cypress run --headless",
     "e2e": "cypress open",
     "testWatch": "nodemon -e js,jsx --exec cypress run",
     "eject": "react-scripts eject"
@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^7.0.6",
     "cypress": "^7.6.0"
   }
 }
