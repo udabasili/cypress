@@ -9,6 +9,8 @@ Github projects has actions which i should look at later
 To create actions from our project we would need to create a yml file
 Whenver github sees a yml file, github knows it a github action and runs it
 Start by creating a .github folder in the root of our folder 
-then workflow and cypress.yml
+then workflows and cypress.yml
 visit https://github.com/cypress-io/github-action for the yaml for the actions but now have
 the cypress.yml filled with comments about
+
+After adding the cypress.yml we when do the typpicall add, commit push then go to Actions in github repo
