@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cypress run --headless --record --key 7ed9e61c-4434-4a4c-a64e-49dbf37727fc",
+    "test": "cypress run --headless", 
     "e2e": "cypress open",
     "testWatch": "nodemon -e js,jsx --exec cypress run",
     "eject": "react-scripts eject"

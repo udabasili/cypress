@@ -1,0 +1,21 @@
+name: Run Cypress Test #the name of the action
+on: [push] #when we want to run this action. we run this anytime there is git push
+jobs: #the job we want to do
+  run_cypress: # key
+    name: Run Cypress #this is the name of the job
+    runs-on: ubuntu-latest #the operating system we want to run on
+    timeout-minutes: 20 #the max minutes we want for all tests
+    steps: #the actual jobs
+      - name: Checkout #the name of the step
+        uses: actions/checkout@v2 #the version of the action/checkout we want use
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress Run
+        uses: cypress-io/github-action@v2
+        with: #tell is how we want the steps to run
+          start: npm start ##we want our app to start before any test above is run
+          config-file: cypress.json #the configuration file
+          wait-on: "http://localhost:3000" #the path we want to open after  start
+          wait-on-timeout: 300 #wait for 300 minutes max
+          browser: chrome
+          headless: true
