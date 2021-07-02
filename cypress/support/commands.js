@@ -33,7 +33,7 @@ import '@testing-library/cypress/add-commands';
 Cypress.Commands.add("login", (email = 'scott@yahoo.com') => {
 //we start first by opening the window and wait for it to fully open
     cy.window().then(() => {
-        w//then visit the home page
+        //then visit the home page
         cy.visit("/")
         //then we make a post request with the authentication credentials
         cy.request({
