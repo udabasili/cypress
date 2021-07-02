@@ -1,17 +1,22 @@
 describe("Make sure site loads", () => {
   beforeEach(() => {
-    // const moviesListUrl =
-    //   "https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&api_key=65e043c24785898be00b4abc12fcdaae"
+    //IMPORT the env from cypress.json
+     const API_KEY = Cypress.env("REACT_APP_MOVIE_API")
+     const moviesListUrl =
+       "https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&api_key=" +
+       API_KEY
 
-    // const configUrl =
-    //   "https://api.themoviedb.org/3/configuration?api_key=65e043c24785898be00b4abc12fcdaae"
-
-    // cy.intercept(moviesListUrl, {
-    //   fixture: "moviesList",
-    // })
-    // cy.intercept(configUrl, {
-    //   fixture: "config",
-    // })
+     const configUrl =
+       "https://api.themoviedb.org/3/configuration?api_key=" + API_KEY
+//intercept and response to the call made in the test instead of reaching the real pi
+     cy.intercept(moviesListUrl, {
+       fixture: "moviesList",
+     })
+     cy.intercept(configUrl, {
+       fixture: "config",
+     })
+     cy.visit("http://localhost:3000/")
+     cy.login()
     cy.visit("http://localhost:3000/")
   })
 

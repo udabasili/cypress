@@ -1,0 +1,14 @@
+{
+    "plugins": [
+        "cypress"
+    ],
+    "env": {
+        "cypress/globals": true
+    },
+    "extends": [
+        "plugin:cypress/recommended",
+        //these were required for react.js only because i started getting errors
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ]
+}

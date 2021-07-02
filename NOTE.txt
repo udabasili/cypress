@@ -23,3 +23,26 @@ npm install --save-dev cypress-log-to-output
 
 then we add it the plugins folder at index.js at the end of line
 'require("cypress-log-to-output").install(on)'
+then blah blah bah comit, push again
+this time you would notice more but more defined error
+
+"
+ Failed to load resource: the server responded with a status of 401 (Unauthorized)
+URL: https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&
+include_video=false&page=1&api_key=undefined
+"
+
+This shows that the api is undefined
+
+since we are not sending our env, no api key is sent 
+but have the data in fixtures -> movieList so we want to use any apikey and use fixture and intercept to return data 
+we add the fake key in our cypress.json
+then we use fixture and intercept in tour.js 
+we also want our app to hhave access to the fake api 
+so in our git repo we go to settings -> secrets -> new repo secret ( button at the  top right)
+add name REACT_APP_MOVIE_API
+value fake 
+--. above is based on the values in cypress.json since we want the cypress to match the app
+
+This is how we would add secrets in future for testing 
+but dont use real secrets just fake ones with some data downloaded from real api for testing
