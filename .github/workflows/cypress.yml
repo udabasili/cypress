@@ -19,3 +19,5 @@ jobs: #the job we want to do
           wait-on-timeout: 300 #wait for 300 minutes max
           browser: chrome
           headless: true
+        env:
+          REACT_APP_MOVIE_API: ${{secrets.REACT_APP_MOVIE_API}}

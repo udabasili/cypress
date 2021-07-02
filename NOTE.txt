@@ -43,6 +43,8 @@ so in our git repo we go to settings -> secrets -> new repo secret ( button at t
 add name REACT_APP_MOVIE_API
 value fake 
 --. above is based on the values in cypress.json since we want the cypress to match the app
-
+then in the cypress.yaml add
+` env:
+    REACT_APP_MOVIE_API: ${{secrets.REACT_APP_MOVIE_API}}`
+secrets -> this refers to the secret we have added in our repo
 This is how we would add secrets in future for testing 
-but dont use real secrets just fake ones with some data downloaded from real api for testing
