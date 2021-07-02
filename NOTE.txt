@@ -16,3 +16,10 @@ the cypress.yml filled with comments about
 After adding the cypress.yml we when do the typpicall add, commit push then go to Actions in github repo
 
 NOTE: MAKE SURE TO INSTALL THE EXTRA PACKAGES YOU MIGHT HAVE IMPORTED IN CYPRESS IN PACKAGE.JSON
+For this initial process, our test actuall failed with this error
+"we get an error   > Cannot read property 'filter' of undefined"
+We want a better error so first we need to instaall a package to get the browser error since we are using heaadless
+npm install --save-dev cypress-log-to-output
+
+then we add it the plugins folder at index.js at the end of line
+'require("cypress-log-to-output").install(on)'
