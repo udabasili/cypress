@@ -3,8 +3,7 @@ describe("Make sure site loads", () => {
     //IMPORT the env from cypress.json
      const API_KEY = Cypress.env("REACT_APP_MOVIE_API")
      const moviesListUrl =
-       "https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&api_key=" +
-       API_KEY
+       "https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&api_key=" + API_KEY
 
      const configUrl =
        "https://api.themoviedb.org/3/configuration?api_key=" + API_KEY
@@ -16,8 +15,8 @@ describe("Make sure site loads", () => {
        fixture: "config",
      })
      cy.visit("http://localhost:3000/")
-     cy.login()
-    cy.visit("http://localhost:3000/")
+    //  cy.login()
+    // cy.visit("http://localhost:3000/")
   })
 
   it("Page Loads", () => {
